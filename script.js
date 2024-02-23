@@ -37,9 +37,23 @@ function pauseSong() {
 	audio.pause();
 }
 
+function prevSong() {
+	songIndex == 0 ? (songIndex = songs.length - 1) : songIndex--;
+	loadSong(songs[songIndex]);
+	playSong();
+}
+function nextSong() {
+	songIndex == songs.length - 1 ? (songIndex = 0) : songIndex++;
+	loadSong(songs[songIndex]);
+	playSong();
+}
+
 // Events
 playBtn.addEventListener('click', () => {
 	const isPlaying = musicContainer.classList.contains('play');
 
 	isPlaying ? pauseSong() : playSong();
 });
+
+prevBtn.addEventListener('click', prevSong);
+nextBtn.addEventListener('click', nextSong);
