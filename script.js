@@ -7,3 +7,18 @@ const audio = document.getElementById('audio');
 const title = document.getElementById('title');
 const progressContainer = document.getElementById('progress-container');
 const progress = document.getElementById('progress');
+
+// Song titles
+const songs = ['hey', 'summer', 'ukulele'];
+
+// Track current song
+let songIndex = 2;
+
+// Load song details
+loadSong(songs[songIndex]);
+
+function loadSong(song) {
+	title.innerText = song;
+	audio.src = `music/${song}.mp3`;
+	cover.src = `images/${song}.jpg`;
+}
